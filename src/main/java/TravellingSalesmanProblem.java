@@ -5,6 +5,38 @@ public class TravellingSalesmanProblem {
 
     private BinaryTree tree;
 
+    static final int COUNT = 10;
+
+    private void printTree (Node root, int space) {
+        if (root != null) {
+
+            // Increase distance between levels
+            space += COUNT;
+
+            // Process right child first
+            printTree(root.getRight(), space);
+
+            // Print current node after space
+            // count
+            System.out.print("\n");
+            for (int i = COUNT; i < space; i++)
+                System.out.print(" ");
+            if (!root.isIncluded())
+                System.out.print("id:" + root.getId()+ " " + root.getPath() + " R:" + root.getSum() + "\n");
+            else
+                System.out.print("id:" + root.getId()+ " *" + root.getPath() + " R:" + root.getSum() + "\n");
+
+            // Process left child
+            printTree(root.getLeft(), space);
+        }
+    }
+
+    public void printResult () {
+//        printTree(tree.getRoot(), 0);
+        TreePrinter treePrinter = new TreePrinter();
+        treePrinter.printNode(tree.getRoot());
+    }
+
     public BinaryTree calculate(BinaryTree binaryTree) {
         this.tree = binaryTree;
         Node currentNode = tree.getRoot();
@@ -34,7 +66,7 @@ public class TravellingSalesmanProblem {
         }
         findRemainedPaths(currentNode);
 
-        System.out.println(tree.printTree());
+//        System.out.println(tree.printTree());
         return this.tree;
     }
 

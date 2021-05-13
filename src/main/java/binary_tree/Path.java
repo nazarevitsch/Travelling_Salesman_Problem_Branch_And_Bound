@@ -1,6 +1,5 @@
 package binary_tree;
 
-import com.sun.rowset.internal.Row;
 
 public class Path {
 
@@ -32,9 +31,8 @@ public class Path {
 
     @Override
     public String toString() {
-        return "Path{" +
-                "row=" + row +
-                ", column=" + column +
-                '}';
+        return "(" + row +
+                ";" + column +
+                ')';
     }
 }

@@ -20,15 +20,15 @@ public class TreePrinter {
         int firstSpaces = (int) Math.pow(2, (floor)) - 1;
         int betweenSpaces = (int) Math.pow(2, (floor + 1)) - 1;
 
-        TreePrinter.printWhitespaces(firstSpaces+5);
+        TreePrinter.printWhitespaces(firstSpaces+1);
 
         List<Node> newNodes = new ArrayList<Node>();
         for (Node node : nodes) {
             if (node != null) {
                 if (!node.isIncluded())
-                    System.out.print(node.getPath() + "(" + node.getSum() + ")");
+                    System.out.print("id:" + node.getId()+ " " +node.getPath() + "(" + node.getSum() + ")");
                 else
-                    System.out.print("!" + node.getPath() + "(" + node.getSum() + ")");
+                    System.out.print("id:" + node.getId()+ " " + "!" + node.getPath() + "(" + node.getSum() + ")");
                 newNodes.add(node.getLeft());
                 newNodes.add(node.getRight());
             } else {
@@ -50,7 +50,7 @@ public class TreePrinter {
                 }
 
                 if (nodes.get(j).getLeft() != null)
-                    System.out.print("        /    ");
+                    System.out.print("        /       ");
                 else
                     TreePrinter.printWhitespaces(8);
 

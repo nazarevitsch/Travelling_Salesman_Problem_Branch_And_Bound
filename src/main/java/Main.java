@@ -11,5 +11,6 @@ public class Main {
         node.setPath(new Path());
 
         tsp.calculate(new BinaryTree(node));
+        tsp.printResult();
     }
 }

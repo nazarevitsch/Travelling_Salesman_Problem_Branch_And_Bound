@@ -48,36 +48,36 @@ public class BinaryTree {
         this.deep = deep;
     }
 
-    public String printTree() {
-        StringBuilder builder = new StringBuilder();
-
-        int currentDeep = deep;
-        Node currentNode = root;
-        for (int i = 0; i < 10 * (currentDeep - 1); i++) {
-            builder.append(" ");
-        }
-        builder.append(currentNode.toString());
-        builder.append("\n");
-        for (int i = 0; i < 10 * (currentDeep - 1) + 7; i++) {
-            builder.append(" ");
-        }
-        builder.append("|\n");
-
-
-        Node left = currentNode.getLeft();
-        Node right = currentNode.getRight();
-        currentDeep--;
-        for (int i = 0; i < 10 * (currentDeep - 1); i++) {
-            builder.append(" ");
-        }
-        builder.append(left.toString());
-        builder.append("\n");
-        for (int i = 0; i < 10 * (currentDeep - 1) + 7; i++) {
-            builder.append(" ");
-        }
-        builder.append("|\n");
-
-
-        return builder.toString();
-    }
+//    public String printTree() {
+//        StringBuilder builder = new StringBuilder();
+//
+//        int currentDeep = deep;
+//        Node currentNode = root;
+//        for (int i = 0; i < 10 * (currentDeep - 1); i++) {
+//            builder.append(" ");
+//        }
+//        builder.append(currentNode.toString());
+//        builder.append("\n");
+//        for (int i = 0; i < 10 * (currentDeep - 1) + 7; i++) {
+//            builder.append(" ");
+//        }
+//        builder.append("|\n");
+//
+//
+//        Node left = currentNode.getLeft();
+//        Node right = currentNode.getRight();
+//        currentDeep--;
+//        for (int i = 0; i < 10 * (currentDeep - 1); i++) {
+//            builder.append(" ");
+//        }
+//        builder.append(left.toString());
+//        builder.append("\n");
+//        for (int i = 0; i < 10 * (currentDeep - 1) + 7; i++) {
+//            builder.append(" ");
+//        }
+//        builder.append("|\n");
+//
+//
+//        return builder.toString();
+//    }
 }

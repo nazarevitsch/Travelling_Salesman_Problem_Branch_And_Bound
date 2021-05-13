@@ -13,12 +13,17 @@ public class Node {
     private boolean isIncluded;
     private int[] meteDataRow;
     private int[] meteDataColumn;
+    private int id = 0;
 
     private int sum;
 
     public Node(MatrixPoint[][] matrix) {
         this.matrix = matrix;
     }
+
+    public int getId() {return  id;}
+
+    public void setId(int id) {this.id = id;}
 
     public int getSum() {
         return sum;
