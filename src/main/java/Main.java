@@ -10,6 +10,6 @@ public class Main {
         Node node = Test.test1();
         node.setPath(new Path());
 
-        tsp.calculate(new BinaryTree(node));
+        Menu.menu(tsp.calculate(new BinaryTree(node)));
     }
 }

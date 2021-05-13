@@ -1,12 +1,14 @@
 package binary_tree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class BinaryTree {
 
     private Node root;
     private List<Path> paths;
+    private HashMap<Integer, Node> map;
     private int deep;
 
     public BinaryTree() {
@@ -48,36 +50,11 @@ public class BinaryTree {
         this.deep = deep;
     }
 
-    public String printTree() {
-        StringBuilder builder = new StringBuilder();
+    public HashMap<Integer, Node> getMap() {
+        return map;
+    }
 
-        int currentDeep = deep;
-        Node currentNode = root;
-        for (int i = 0; i < 10 * (currentDeep - 1); i++) {
-            builder.append(" ");
-        }
-        builder.append(currentNode.toString());
-        builder.append("\n");
-        for (int i = 0; i < 10 * (currentDeep - 1) + 7; i++) {
-            builder.append(" ");
-        }
-        builder.append("|\n");
-
-
-        Node left = currentNode.getLeft();
-        Node right = currentNode.getRight();
-        currentDeep--;
-        for (int i = 0; i < 10 * (currentDeep - 1); i++) {
-            builder.append(" ");
-        }
-        builder.append(left.toString());
-        builder.append("\n");
-        for (int i = 0; i < 10 * (currentDeep - 1) + 7; i++) {
-            builder.append(" ");
-        }
-        builder.append("|\n");
-
-
-        return builder.toString();
+    public void setMap(HashMap<Integer, Node> map) {
+        this.map = map;
     }
 }

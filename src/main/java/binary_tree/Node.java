@@ -13,6 +13,7 @@ public class Node {
     private boolean isIncluded;
     private int[] meteDataRow;
     private int[] meteDataColumn;
+    private int id;
 
     private int sum;
 
@@ -98,6 +99,14 @@ public class Node {
 
     public void setIncluded(boolean included) {
         isIncluded = included;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int sum() {
@@ -213,7 +222,4 @@ public class Node {
         return newNode;
     }
 
-    public String toString() {
-        return "ID: " + 0 + ", P: " + path.getRow() + " ," + path.getColumn() + " ,";
-    }
 }

@@ -32,9 +32,6 @@ public class Path {
 
     @Override
     public String toString() {
-        return "Path{" +
-                "row=" + row +
-                ", column=" + column +
-                '}';
+        return row + " " + column;
     }
 }

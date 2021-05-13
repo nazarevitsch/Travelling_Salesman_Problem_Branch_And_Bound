@@ -1,21 +1,32 @@
 import binary_tree.*;
 import binary_tree.Number;
 
+import java.util.HashMap;
+
 public class TravellingSalesmanProblem {
 
     private BinaryTree tree;
 
     public BinaryTree calculate(BinaryTree binaryTree) {
+        HashMap<Integer, Node> map = new HashMap<Integer, Node>();
+
         this.tree = binaryTree;
         Node currentNode = tree.getRoot();
         boolean flag = true;
+        int id = 0;
+        currentNode.setId(id);
 
         while (!check(currentNode)) {
             reduction(currentNode, flag);
             Path path = afterReduction(currentNode);
+            map.put(id, currentNode);
 
             Node leftChildren = Node.copy(currentNode);
             Node rightChildren = Node.copy(currentNode);
+            leftChildren.setId(++id);
+            map.put(id, leftChildren);
+            rightChildren.setId(++id);
+            map.put(id, rightChildren);
             leftChildren.setIncluded(true);
             rightChildren.setIncluded(false);
             leftChildren.setPath(path);
@@ -33,8 +44,7 @@ public class TravellingSalesmanProblem {
             flag = false;
         }
         findRemainedPaths(currentNode);
-
-        System.out.println(tree.printTree());
+        tree.setMap(map);
         return this.tree;
     }
 
