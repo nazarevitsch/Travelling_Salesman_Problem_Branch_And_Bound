@@ -1,12 +1,14 @@
 package binary_tree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class BinaryTree {
 
     private Node root;
     private List<Path> paths;
+    private HashMap<Integer, Node> map;
     private int deep;
 
     public BinaryTree() {
@@ -80,4 +82,11 @@ public class BinaryTree {
 //
 //        return builder.toString();
 //    }
+public HashMap<Integer, Node> getMap() {
+    return map;
+}
+
+    public void setMap(HashMap<Integer, Node> map) {
+        this.map = map;
+    }
 }

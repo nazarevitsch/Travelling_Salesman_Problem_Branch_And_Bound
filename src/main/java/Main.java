@@ -12,5 +12,6 @@ public class Main {
 
         tsp.calculate(new BinaryTree(node));
         tsp.printResult();
+        Menu.menu(tsp.calculate(new BinaryTree(node)));
     }
 }
